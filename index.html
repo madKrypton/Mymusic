@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Music player</title>
+    <style>
+        body {
+            background-image: url('k8bg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .video-background {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* This will fit the video to the container */
+            opacity: 0.5; /* Adjust the transparency as needed */
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+        .header {
+            text-align: center;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        h1 {
+            color: #edeff1;
+        }
+        .button {
+            background-color: #328ee4;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #275f8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video class="video-background" autoplay muted loop>
+            <source src="video.mp4" type="video/mp4"> <!-- Replace with the correct path to your video -->
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    
+    <div class="content">
+        <h1>My Music Player</h1>
+        <div class="header">
+            <h2>Welcome to the Music world</h2>
+            <p>App Version: 1.0 | Author: Akash</p>
+        </div>
+        <br>
+
+        <audio id="music" controls>
+            <source src="song1.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <p>Controls:
+            <button class="button" onclick="playAudio()">Play</button>
+            <button class="button" onclick="pauseAudio()">Pause</button>
+        </p>
+
+        <hr>
+
+        <audio id="music2" controls>
+            <source src="song2.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <p>Controls:
+            <button class="button" onclick="playAudio2()">Play</button>
+            <button class="button" onclick="pauseAudio2()">Pause</button>
+        </p>
+    </div>
+
+    <script>
+        var audio = document.getElementById("music");
+        var audio2 = document.getElementById("music2");
+
+        function playAudio() {
+            audio.play();
+        }
+
+        function pauseAudio() {
+            audio.pause();
+        }
+
+        function playAudio2() {
+            audio2.play();
+        }
+
+        function pauseAudio2() {
+            audio2.pause();
+        }
+    </script>
+</body>
+</html>
